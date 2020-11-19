@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/logo_animate.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <title>Jamcart</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="/images/jamcart_logo.svg" alt="" style="width: 97px;">
+        <h6><a href="/login">Login</a></h6>
+    </header>
+    
+    <section class="main-display">
+        <div class="form-container container-fluid">
+            <h1 class="heading">SignUp</h1>
+            <form action="/signup" method="POST" class="signup-form">
+            
+                <div class="user-input">
+                    <input type="text" name="fName" autocomplete="off" required>
+                    <span class="place-holder">Name</span>
+                </div>
+                <div class="user-input">
+                    <input type="text" name="lName" autocomplete="off" required>
+                    <span class="place-holder">Last Name</span>
+                </div>
+                <div class="user-input">
+                    <input type="text" name="userName" autocomplete="off" required>
+                    <span class="place-holder">User Name</span>
+                </div>
+                <div class="user-input">
+                    <input type="password" name="password" autocomplete="off" required>
+                    <span class="place-holder">Password</span>
+                </div>
+                <div class="user-input">
+                    <input type="number" name="age" min="18" max="100" required>
+                    <span class="place-holder">Age</span>
+                </div>
+                <div class="user-input">
+                    <input type="number" name="mobileNumber" required>
+                    <span class="place-holder">Mobile No.</span>
+                </div>
+                
+                <div class="user-input">
+                    <button type="submit" class="btn signup-btn">Submit</button>
+                </div>
+            </form>
+        </div> 
+    </section>
+</body>
+</html>

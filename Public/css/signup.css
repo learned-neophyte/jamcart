@@ -1,0 +1,70 @@
+/* removing arrows from input number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* ------------------------------- */
+header{
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+}
+h1.heading{
+    width: 200px;
+    margin: 15px auto 50px;
+}
+form div.user-input{
+    padding: 2px;
+    position:relative;
+    margin: 0 auto 2rem;
+    width:270px;
+}
+form div.user-input:last-child{
+    margin-bottom: 0;
+}
+input{
+    background-color: transparent;
+    border:none;
+    border-bottom:1px solid #757575;
+    color: #f1f6f9;
+    font-size:18px;
+}
+input:focus,
+input:valid{
+    border:none;
+    border-bottom:1px solid #f1f6f9;
+    outline:none;
+    transition: all 500ms;
+}
+span.place-holder{
+    color: #757575;
+    left:0px;
+    pointer-events: none;
+    position: absolute;
+    top:0px;
+}
+input:focus + span.place-holder,
+input:valid + span.place-holder{
+    color: #f1f6f9;
+    left:0px;
+    transform:scale(0.75);
+    transition:all 500ms;
+    top:-18px;
+}
+input:invalid + span.place-holder{
+    transition:all 500ms;
+}
+.signup-btn{
+    background-color: #f1f6f9;
+    transition: background 800ms;
+}
+.signup-btn:hover{
+    background-color: #049c0c;
+    color: #f1f6f9;
+}

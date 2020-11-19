@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    height:100vh;
+}
+header.container-fluid ul{
+    display: flex;
+    justify-content: flex-end;
+}
+header.container-fluid ul li{
+    font-size: 1.2rem;
+    margin: 25px;
+}
+div.main.container-fluid{
+    flex-grow: 1;
+    text-align: center;
+}
+#logo{
+    animation: fill 2500ms ease forwards 3500ms;
+    fill: transparent;
+    margin-top: 18vh;
+    margin-bottom: 60px;
+}
+    @keyframes fill{
+        to{
+            fill: #f1f6f9;        
+        }
+    }
+#logo path:nth-child(1){
+    animation: line-anime 2000ms ease forwards;
+    stroke-dasharray: 312.8px;
+    stroke-dashoffset: 312.8px;
+}
+#logo path:nth-child(2){
+    animation: line-anime 2000ms ease forwards 300ms;
+    stroke-dasharray: 506.4px;
+    stroke-dashoffset: 506.4px;
+}
+#logo path:nth-child(3){
+    animation: line-anime 2000ms ease forwards 600ms;
+    stroke-dasharray: 668.7px;
+    stroke-dashoffset: 668.7px;
+}
+#logo path:nth-child(4){
+    animation: line-anime 2000ms ease forwards 900ms;
+    stroke-dasharray: 398.9px;
+    stroke-dashoffset: 398.9px;
+}
+#logo path:nth-child(5){
+    animation: line-anime 2000ms ease forwards 1200ms;
+    stroke-dasharray: 506.4px;
+    stroke-dashoffset: 506.4px;
+}
+#logo path:nth-child(6){
+    animation: line-anime 2000ms ease forwards 1500ms;
+    stroke-dasharray: 246px;
+    stroke-dashoffset: 246px;
+}
+#logo path:nth-child(7){
+    animation: line-anime 2000ms ease forwards 1800ms;
+    stroke-dasharray: 314.9px;
+    stroke-dashoffset: 314.9px;
+}
+    @keyframes line-anime{
+        to{
+            stroke-dashoffset: 0;
+        }
+    }
+
+h2.tagline, header.container-fluid li a{
+    animation: fadeIn 4000ms ease forwards 4600ms;
+    color: transparent;
+}
+    @keyframes fadeIn{
+        to{
+            color: #f1f6f9;
+        }
+    }
