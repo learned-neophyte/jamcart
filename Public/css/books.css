@@ -2,7 +2,7 @@ body{
     text-align: center;
 }
 header{
-    align-items: center;
+    align-items: baseline;
     background-color: #162535;
     display: flex;
     justify-content: space-between;
@@ -14,15 +14,11 @@ header{
     z-index: 2;
 }
 header div.menu{
-    align-items: baseline;
     display: flex;
     justify-content: flex-end;
 }
 img.cart_logo{
     margin-right: 25px;
-}
-img.cart_logo:hover{
-    transform: scale(1.2);
 }
 div.menu a:last-child{
     margin-right: 17px;
@@ -31,16 +27,8 @@ section.main-display{
     background-color: rgba(196, 196, 196, 0.05);
     padding-top: 3px;
 }
-section{
-    margin-top: 50px;
-}
-.category-btn{
-    background-color: transparent;
-    border: none;
-    color: #999999;
-}
-.category-btn:hover{
-    color: #F1F6F9;
+div.container{
+    margin-top: 95px;
 }
 .category{
     display: flex;
@@ -64,10 +52,14 @@ section{
 .card-body form button:hover{
     color: #F1F6F9;
 }
-.btn{
+.card-body li{
+    font-size: 14px;
+    padding-bottom: 2px;
+}
+a.btn{
     background-color: #d9dddf;
 }
-.btn:hover{
+a.btn:hover{
     background-color: #049c0c;
     color: #f1f6f9;
 }

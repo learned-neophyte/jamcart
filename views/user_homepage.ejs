@@ -12,7 +12,7 @@
     <header>
         <img class="logo" src="/images/jamcart_logo.svg" alt="" style="width: 97px;">
         <div class="menu">
-            <a href="#">
+            <a href="/cart">
                 <img class="cart_logo" src="/images/cart_logo.svg" alt="" style="width: 30px;">
             </a>
             <a href="/login">
@@ -27,7 +27,11 @@
 
             <section class="books">
                 
-                <h4> <a href="/books">Books</a> </h4>
+                <form action="/books" method="POST">
+                    <button type="submit" class="category-btn">
+                        <h4> Books </h4>
+                    </button>
+                </form>
                 <div class="category">
                     <% var i= 0; %> 
                     <% products.forEach( ( product) =>{ %>
@@ -41,8 +45,6 @@
                                             <h6 class="card-title"><%= product.name %></h6>
                                         </button>
                                     </form>
-                                    <!-- <li>Price: <%= product.price %> Rs </li> 
-                                    <li>Rating: <%= product.rating %>/5 </li>  -->
                                     <a href="#" class="btn">buy</a>
                                 </div>          
                             </div>
@@ -53,7 +55,12 @@
             </section>
     
             <section class="clothing">
-                <h4> <a href="#">Clothing</a> </h4>
+                
+                <form action="/clothing" method="POST">
+                    <button type="submit" class="category-btn">
+                        <h4> clothing </h4>
+                    </button>
+                </form>
                 <div class="category">
                     <% var i= 0; %> 
                     <% products.forEach( ( product) =>{ %>
@@ -67,8 +74,6 @@
                                             <h6 class="card-title"><%= product.name %></h6>
                                         </button>
                                     </form>
-                                    <!-- <li>Price: <%= product.price %> Rs </li> 
-                                    <li>Rating: <%= product.rating %>/5 </li>  -->
                                     <a href="#" class="btn">buy</a>
                                 </div>          
                             </div>
@@ -82,4 +87,8 @@
     </section>
 
 </body>
+    <script>
+        sessionStorage.setItem('userName','<%= userName %>')
+    </script>
 </html>
+<!-- sessionStorage.setItem('userName','<%= userName %>') -->

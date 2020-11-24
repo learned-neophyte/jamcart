@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/books.css">
+    <title>Jamcart</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="/images/jamcart_logo.svg" alt="" style="width: 97px;">
+        <div class="menu">
+            <a href="#">
+                <img class="cart_logo" src="/images/cart_logo.svg" alt="" style="width: 30px;">
+            </a>
+            <a href="/login">
+                <h6>Logout</h6>
+            </a>
+        </div>
+    </header>
+    <section class="main-display">
+
+        <div class="container">
+                
+                <h4>Books</h4>
+                <div class="category">
+                    <% products.forEach( ( product) =>{ %>
+                        <% if(product.category.name === "book"){ %>
+                            
+                            <div class="card" style="width: 10.5rem;">
+                                <img src="<%= product.images[0] %>.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <form action="/product-details" method="post">
+                                        <button  name="productId" value="<%= product._id %>">
+                                            <h6 class="card-title"><%= product.name %></h6>
+                                        </button>
+                                    </form>
+                                    <li> Rs <%= product.price %> </li> 
+                                    <a href="#" class="btn">buy</a>
+                                </div>          
+                            </div>
+                        <% } %>
+                    <% }); %>
+                </div>
+        </div>
+    </section>
+
+</body>
+</html>

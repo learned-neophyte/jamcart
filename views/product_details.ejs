@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/user_homepage.css">
+    <link rel="stylesheet" href="/css/product_details.css">
+    <title>Jamcart</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="/images/jamcart_logo.svg" style="width: 97px;">
+        <div class="menu">
+            <a href="/cart">
+                <img class="cart_logo" src="/images/cart_logo.svg" style="width: 30px;">
+            </a>
+            <a href="/login">
+                <h6>Logout</h6>
+            </a>
+        </div>
+    </header>
+
+    <section class="main-display">
+            <div class="product">
+                <img src="<%= product.images[0] %>.jpg">
+                <div class="product-details-container">
+                    <div class="product-details">
+                        <h5><%= product.name %></h5>
+                        
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, ex nemo sit minima aperiam dolorem sed voluptatum mollitia quisquam veritatis qui asperiores veniam modi maxime facere, similique, enim odio obcaecati.</li>
+                        <li class="list-group-item">rating: <%= product.rating %></li>
+                        <li class="list-group-item"> Rs <%= product.price %> </li>
+                      </ul>
+                      <div class="product-details">
+                        <form action="/cart" method="POST">
+                            <button class="btn cart" type="submit">add to cart</button>
+                            <input type="hidden" name="userName" value="">
+                            <input type="hidden" name="productId" value="<%= product._id %>">
+                        </form>
+                        <a href="#" class="btn">buy</a>
+                      </div>
+                </div>
+            </div>
+    </section>
+    
+    <!-- <script>
+        document.querySelector( "form input").value= sessionStorage.getItem('userName');
+    </script> -->
+</body>
+</html>
