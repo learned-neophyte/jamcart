@@ -2,7 +2,7 @@ body{
     text-align: center;
 }
 header{
-    align-items: center;
+    align-items: baseline ;
     background-color: #162535;
     display: flex;
     justify-content: space-between;
@@ -50,7 +50,10 @@ section{
 .card{
     background-color: transparent;
     border: none;
-    margin: 0.75rem 1rem;
+    margin: 2rem 1rem;
+}
+.card-body{
+    padding: 7px;
 }
 .card-body button{
     border: none;
@@ -60,14 +63,16 @@ section{
 }
 .card-body form button{
     color: #C4C4C4;
+    width: 100%;
 }
 .card-body form button:hover{
     color: #F1F6F9;
 }
-.btn{
+a.btn{
     background-color: #d9dddf;
+    width: 100%;
 }
-.btn:hover{
+a.btn:hover{
     background-color: #049c0c;
     color: #f1f6f9;
 }

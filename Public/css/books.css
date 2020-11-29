@@ -13,6 +13,9 @@ header{
     width: 100vw;
     z-index: 2;
 }
+header h4.logo{
+    font-weight: 600;
+}
 header div.menu{
     display: flex;
     justify-content: flex-end;
@@ -38,7 +41,10 @@ div.container{
 .card{
     background-color: transparent;
     border: none;
-    margin: 0.75rem 1rem;
+    margin: 2rem 1rem;
+}
+.card-body{
+    padding: 7px;
 }
 .card-body button{
     border: none;
@@ -58,6 +64,7 @@ div.container{
 }
 a.btn{
     background-color: #d9dddf;
+    width: 100%;
 }
 a.btn:hover{
     background-color: #049c0c;

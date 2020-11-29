@@ -82,6 +82,20 @@ app.route( "/login")
         })
 });
 
+app.get( "/user-homepage", ( req, res) => {
+    if( user != undefined){
+        Product.find({}, ( err, products) => {
+            if( !err){
+                res.render( "user_homepage", { products: products, userName: req.body.userName});
+            }else{
+                console.log( err);
+            }
+        })
+    }else{
+        res.redirect( "/login")
+    }
+});
+
 // ================================ book route ================================
 
 app.post( "/books", ( req, res) => {
@@ -107,12 +121,24 @@ app.post( "/clothing", ( req, res) => {
 });
 
 // ================================ product details route ================================
+let productId;
 
 app.post( "/product-details", ( req, res) => {
 
     Product.findOne({ _id:req.body.productId}, ( err, foundProduct) =>{
         if( !err){
-            
+            productId= req.body.productId;
+            res.render( "product_details", { product: foundProduct});
+        }else{
+            console.log( `error in loading product details from 
+            product-details route`+err);
+        }
+    });
+});
+app.get( "/product-details", ( req, res) => {
+
+    Product.findOne({ _id:productId}, ( err, foundProduct) =>{
+        if( !err){
             res.render( "product_details", { product: foundProduct});
         }else{
             console.log( `error in loading product details from 
@@ -123,38 +149,62 @@ app.post( "/product-details", ( req, res) => {
 
 // ================================ add-to-cart route ================================
 
-// app.post( "/cart", ( req, res) => {
-//     console.log(req.body);
-//     res.render( "cart", {});
-// });
-
 app.get( "/cart", ( req, res) => {
+    
     User.findOne({ userName: user}, ( err, foundUser) => {
         if( !err){
-            res.render( "cart", { user1: foundUser});
+            res.render( "cart", { user: foundUser});
         }else{
             console.log("error in finding user inside product from get('/cart') : "+ err);
         }
-        console.log( foundUser);
     });
 });
 
 app.post( "/cart", ( req, res) => {
+    
     Product.findById( req.body.productId, ( err, foundProduct) => {
         if( !err){
+            
             User.findOne( {userName: user}, ( err, foundUser) => {
                 if( !err){
+                    
                     foundUser.cart.push( foundProduct);
                     foundUser.save();
-                    // res.render( "cart", { user: foundUser});
-                    res.redirect( "/cart");
+            
+                    Product.find({}, ( err, products) => {
+                        if( !err){
+                            res.render( "user_homepage", { products: products, userName: user});
+                        }else{
+                            console.log( err);
+                        }
+                    });
                 }else{
                     console.log("error in finding user inside product from post('/cart') : "+ err);
                 }
-                // console.log( foundUser);
             });
         }else{
             console.log("error in finding product from post('/cart') : "+ err);
+        }
+    });
+});
+
+app.post( "/delete-from-cart", ( req, res) => {
+
+    User.findOne({ userName: user}, ( err, foundUser) => {
+        if( !err){
+            var i=0;
+            foundUser.cart.forEach( cartItem => {
+                
+                if( cartItem._id == req.body.productId){
+
+                    foundUser.cart.splice( i, 1);
+                    foundUser.save();
+                    res.redirect( "/cart");
+                }
+                i++;
+            })
+        }else{
+            console.log("error in finding user from post('/delete-from-cart') : "+ err);
         }
     });
 });

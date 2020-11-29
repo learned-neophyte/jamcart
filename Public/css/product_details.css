@@ -40,13 +40,16 @@ section.main-display{
     border: none;
     font-size: 14px;    
 }
-form{
-    display: inline;
-}
-.product button{
+.product .btn.cart{
     border: none;
+    background-color: #d9dddf;
     outline: none;
+    width: 70%;
 }
 .product .btn.cart:hover{
     background-color: #dda706;
+}
+a.btn{
+    margin-top: 5px;
+    width: 70%;
 }

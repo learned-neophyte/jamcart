@@ -24,3 +24,6 @@ li{
 header{
     padding: 25px 27px 0;
 }
+header h4.logo{
+    font-weight: 600;
+}

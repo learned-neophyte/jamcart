@@ -10,7 +10,9 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="/images/jamcart_logo.svg" alt="" style="width: 97px;">
+        
+        <h4 class="logo"> <a href="/user-homepage"> Jamcart </a> </h4>
+
         <div class="menu">
             <a href="/cart">
                 <img class="cart_logo" src="/images/cart_logo.svg" alt="" style="width: 30px;">
@@ -37,7 +39,7 @@
                     <% products.forEach( ( product) =>{ %>
                         <% if(product.category.name === "book" && i<5){ %>
                             
-                            <div class="card" style="width: 10.5rem;">
+                            <div class="card" style="width: 12rem;">
                                 <img src="<%= product.images[0] %>.jpg" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <form action="/product-details" method="post">
