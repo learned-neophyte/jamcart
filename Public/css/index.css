@@ -9,7 +9,7 @@ header.container-fluid ul{
     justify-content: flex-end;
 }
 header.container-fluid ul li{
-    font-size: 1.2rem;
+    font-size: 14px;
     margin: 25px;
 }
 div.main.container-fluid{
@@ -21,6 +21,8 @@ div.main.container-fluid{
     fill: transparent;
     margin-top: 18vh;
     margin-bottom: 60px;
+    width: 606px;
+    height: 105px;
 }
     @keyframes fill{
         to{
@@ -77,3 +79,16 @@ h2.tagline, header.container-fluid li a{
             color: #f1f6f9;
         }
     }
+
+@media( max-width: 660px){
+    header.container-fluid ul li{
+        font-size: 70%;
+        /* margin:; */
+    }
+    #logo{
+        width:70vw;
+    }
+    h2.tagline{
+        font-size: 70%;
+    }
+}

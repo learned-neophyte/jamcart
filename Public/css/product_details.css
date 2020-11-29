@@ -7,6 +7,7 @@ section.main-display{
     background-color: rgba(196, 196, 196, 0.05);
     flex-grow: 1;
     padding-top: 3px;
+    width: 100%;
 }
 .product{
     background-color: rgba(196, 196, 196, 0.05);
@@ -52,4 +53,19 @@ section.main-display{
 a.btn{
     margin-top: 5px;
     width: 70%;
+}
+
+@media(max-width: 660px){
+    .product{
+        background-color: transparent;
+        flex-direction: column;
+        width: auto;
+    }
+    .product img{
+        margin: auto;
+    }
+    .product-details-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

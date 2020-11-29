@@ -14,10 +14,12 @@ section.main-display .cart-items{
     justify-content: space-evenly;
     margin:20px auto 0;
     width: 75vw;
+    flex-wrap: wrap;
     /* border: 1px solid red; */
 }
 section.main-display .card{
     border: none;
+    width: 10rem;
 }
 .card .product-name{
     text-transform: uppercase;
