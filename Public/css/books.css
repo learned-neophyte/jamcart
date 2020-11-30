@@ -23,6 +23,9 @@ header div.menu{
 img.cart_logo{
     margin-right: 25px;
 }
+img.cart_logo:hover{
+    transform: scale(1.2);
+}
 div.menu a:last-child{
     margin-right: 17px;
 }
