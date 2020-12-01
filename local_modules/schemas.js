@@ -1,5 +1,6 @@
 const mongoose= require( "mongoose");
-mongoose.connect( "mongodb://localhost:27017/jamcart", { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect( "mongodb+srv://admin-sid:9+9=Ninety9@cluster0.whote.mongodb.net/jamcart?retryWrites=true&w=majority", 
+{ useNewUrlParser: true, useUnifiedTopology: true});
 
 const productSchema= new mongoose.Schema({
     name: {

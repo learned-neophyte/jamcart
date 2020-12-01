@@ -1,4 +1,7 @@
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     text-align: center;
 }
 header{
@@ -31,6 +34,7 @@ div.menu a:last-child{
 }
 section.main-display{
     background-color: rgba(196, 196, 196, 0.05);
+    flex-grow: 1;
     padding-top: 3px;
 }
 div.container{
