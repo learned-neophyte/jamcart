@@ -4,6 +4,11 @@ body{
     font-family: 'Poppins', sans-serif;
     height:100vh;
 }
+@media( max-width: 660px){
+    body{
+        height: 80vh;
+    }
+}
 header.container-fluid ul{
     display: flex;
     justify-content: flex-end;

@@ -1,3 +1,11 @@
+@media( max-width: 660px){
+    body{
+        height: 80vh;
+    }
+}
+form{
+    text-align: center;
+}
 /* removing arrows from input number */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -42,18 +50,29 @@ input:valid{
     outline:none;
     transition: all 500ms;
 }
+@media( max-width: 660px){
+    form input{
+        width:120px;
+    }
+}
 span.place-holder{
     color: #757575;
-    left:0px;
+    left:50%;
     pointer-events: none;
     position: absolute;
     top:0px;
+    transform: translateX(-50%);
+}
+@media( max-width: 660px){
+    span.place-holder{
+        font-size: 14px;
+    }
 }
 input:focus + span.place-holder,
 input:valid + span.place-holder{
     color: #f1f6f9;
-    left:0px;
-    transform:scale(0.75);
+    left:50%;
+    transform:scale(0.75) translateX(-52%);
     transition:all 500ms;
     top:-18px;
 }
