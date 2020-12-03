@@ -1,5 +1,5 @@
 const mongoose= require( "mongoose");
-mongoose.connect( "mongodb+srv://admin-sid:9+9=Ninety9@cluster0.whote.mongodb.net/jamcart?retryWrites=true&w=majority", 
+mongoose.connect( "mongodb+srv://admin-sid:<password>@cluster0.whote.mongodb.net/jamcart?retryWrites=true&w=majority", 
 { useNewUrlParser: true, useUnifiedTopology: true});
 
 const productSchema= new mongoose.Schema({
